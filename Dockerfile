@@ -1,4 +1,4 @@
-FROM python:3.9-alpine3.19
+FROM python:3.12-alpine3.19
 LABEL authors="Scot_Survivor"
 
 ENV PYTHONUNBUFFERED=1
