@@ -58,6 +58,9 @@ def update_user_group(group_name, user_id, group_id, user_data):
     data['group'] = group_name
     data['groupSlug'] = group_name.lower().replace(' ', '-')
     data['group_id'] = group_id
+    data['canInvite'] = True
+    data['canManage'] = True
+    data['canOrganize'] = True
     resp = requests.put(f'{MEALIE_URL}/api/admin/users/{user_id}', headers=HEADERS, json=data)
     resp.raise_for_status()
     logging.info(f'Updated user {user_data["username"]} to group {group_name}')
